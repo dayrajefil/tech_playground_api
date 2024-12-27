@@ -55,3 +55,7 @@ group :development, :test do
   # Mocks para testes
   gem 'webmock'
 end
+
+group :test do
+  gem 'rails-controller-testing'
+end

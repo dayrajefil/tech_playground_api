@@ -6,6 +6,8 @@
 #
 class ApplicationController < ActionController::API
   def pagination_meta(collection)
+    return if collection.nil?
+
     {
       current_page: collection.current_page,
       next_page: collection.next_page,
