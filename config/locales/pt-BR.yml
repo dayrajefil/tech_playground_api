@@ -129,6 +129,8 @@ pt-BR:
       other_than: deve ser diferente de %{count}
       present: deve ficar em branco
       phone_format: deve ser um número válido
+      range:
+        between: "deve estar entre %{min} e %{max}"
       required: é obrigatório(a)
       taken: já está em uso
       too_long:

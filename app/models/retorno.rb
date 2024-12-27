@@ -19,4 +19,9 @@ class Retorno < ApplicationRecord
             :clareza_sobre_possibilidades_de_carreira, :comentario_clareza_sobre_possibilidades_de_carreira,
             :expectativa_de_permanencia, :comentario_expectativa_de_permanencia, :enps, :comentario_enps,
             presence: true
+
+  validates :interesse_no_cargo, :contribuicao, :aprendizado_e_desenvolvimento, :feedback, :interacao_com_gestor,
+            :clareza_sobre_possibilidades_de_carreira, :expectativa_de_permanencia, :enps,
+            inclusion: { in: 1..10, message: I18n.t('errors.messages.range.between', min: 1, max: 10) }
+
 end
