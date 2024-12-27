@@ -8,33 +8,6 @@ module Api
     # Através do método `create`, ele recebe um arquivo, realiza a importação utilizando o serviço `ImportCsvService`
     # e retorna uma resposta JSON com sucesso ou erros.
     #
-    # Exemplo de resposta de sucesso:
-    #   {
-    #     "message": "Importação bem-sucedida!"
-    #   }
-    #
-    # Exemplo de resposta de erro:
-    #   {
-    #     "errors": [
-    #       {
-    #           "pessoa": {
-    #               "email": {
-    #                   "value": "demo001@pinpeople.com.br",
-    #                   "messages": [
-    #                       "já está em uso"
-    #                   ]
-    #               },
-    #               "email_corporativo": {
-    #                   "value": "demo001@pinpeople.com.br",
-    #                   "messages": [
-    #                       "já está em uso"
-    #                   ]
-    #               }
-    #           }
-    #       }
-    #   ]
-    # }
-    #
     class CsvImportsController < ApplicationController
       def create
         file = params[:file]
