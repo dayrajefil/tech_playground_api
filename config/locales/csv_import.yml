@@ -1,0 +1,4 @@
+pt-BR:
+  messages:
+    file_not_sent: "Nenhum arquivo enviado"
+    import_success: "Importação bem-sucedida!"

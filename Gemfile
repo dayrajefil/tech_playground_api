@@ -19,6 +19,9 @@ gem 'tzinfo-data', platforms: %i[windows jruby]
 # Otimização de boot
 gem 'bootsnap', require: false
 
+# Internacionalização
+gem 'i18n'
+
 # Paginação
 gem 'kaminari'
 
@@ -30,6 +33,11 @@ gem 'rubocop-factory_bot', '~> 2.22.0', require: false
 gem 'rubocop-rails', '~> 2.0', require: false
 gem 'rubocop-rspec', '~> 2.0', require: false
 gem 'rubocop-rspec_rails', '~> 2.28.0', require: false
+
+# Tratar CSV
+gem 'csv'
+
+gem 'enumerate_it'
 
 group :development, :test do
   # Debugging

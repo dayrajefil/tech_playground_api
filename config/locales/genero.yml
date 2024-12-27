@@ -1,0 +1,6 @@
+pt-BR:
+  enumerations:
+    genero:
+      other: Outro
+      female: Feminino
+      male: Masculino

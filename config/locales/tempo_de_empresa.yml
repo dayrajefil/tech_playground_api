@@ -1,0 +1,7 @@
+pt-BR:
+  enumerations:
+    tempo_de_empresa:
+      less_than_one: menos de 1 ano
+      between_one_and_two: entre 1 e 2 anos
+      between_two_and_five: entre 2 e 5 anos
+      more_than_five: mais de 5 anos

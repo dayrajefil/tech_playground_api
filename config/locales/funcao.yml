@@ -1,0 +1,5 @@
+pt-BR:
+  enumerations:
+    funcao:
+      manager: Gestor
+      professional: Profissional

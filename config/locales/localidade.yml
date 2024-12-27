@@ -1,0 +1,8 @@
+pt-BR:
+  enumerations:
+    localidade:
+      brasilia: Brasília
+      manaus: Manaus
+      porto_alegre: Porto Alegre
+      recife: Recife
+      sao_paulo: São Paulo

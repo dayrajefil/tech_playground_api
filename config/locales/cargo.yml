@@ -1,0 +1,8 @@
+pt-BR:
+  enumerations:
+    cargo:
+      intern: Estagiário
+      analyst: Analista
+      coordinator: Coordenador
+      manager: Gerente
+      director: Diretor

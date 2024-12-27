@@ -94,9 +94,12 @@ GEM
       bigdecimal
       rexml
     crass (1.0.6)
+    csv (3.3.2)
     date (3.4.1)
     diff-lcs (1.5.1)
     drb (2.2.1)
+    enumerate_it (4.0.0)
+      activesupport (>= 6.0.0)
     erubi (1.13.1)
     factory_bot (6.5.0)
       activesupport (>= 5.0.0)
@@ -301,8 +304,11 @@ PLATFORMS
 DEPENDENCIES
   bootsnap
   byebug
+  csv
+  enumerate_it
   factory_bot_rails
   faker
+  i18n
   kaminari
   pg (~> 1.1)
   puma (>= 5.0)

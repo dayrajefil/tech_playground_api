@@ -1,0 +1,8 @@
+pt-BR:
+  enumerations:
+    area:
+      administrative: Administrativo
+      commercial: Comercial
+      financial: Financeiro
+      human_resources: Recursos Humanos
+      technology: Tecnologia

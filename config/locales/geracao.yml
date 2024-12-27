@@ -1,0 +1,7 @@
+pt-BR:
+  enumerations:
+    geracao:
+      baby_boomer: Baby Boomer
+      x_generation: Geração X
+      y_generation: Geração Y
+      z_generation: Geração Z
