@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 module Api
-  module V1 # rubocop:disable Style/Documentation
+  module V1
     # Controller responsável por gerenciar a importação de arquivos CSV.
     #
     # Este controlador lida com o processo de importação de dados de feedback de funcionários a partir de arquivos CSV.
