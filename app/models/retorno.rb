@@ -9,6 +9,9 @@ class Retorno < ApplicationRecord
   # belongs_to associations
   belongs_to :pessoa
 
+  # accepts_nested_attributes
+  accepts_nested_attributes_for :pessoa, allow_destroy: true
+
   # validates presence
   validates :data_da_resposta, :interesse_no_cargo, :comentario_interesse_no_cargo, :contribuicao,
             :comentario_contribuicao, :aprendizado_e_desenvolvimento, :comentarios_aprendizado_e_desenvolvimento,

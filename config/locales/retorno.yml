@@ -1,0 +1,13 @@
+pt-BR:
+  activerecord:
+    models:
+      retorno:
+        one: "Feedback"
+        other: "Feedbacks"
+  controllers:
+    api:
+      v1:
+        retornos:
+          deleted: "Feedback deletado com sucesso."
+          not_found: "Feedback não encontrado."
+          deletion_error: "Erro ao deletar o feedback."

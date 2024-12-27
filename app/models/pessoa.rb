@@ -8,7 +8,10 @@
 class Pessoa < ApplicationRecord
   # has_one associations
   has_one :organizacao, dependent: :destroy
-  has_one :retornos, dependent: :destroy
+  has_one :retorno, dependent: :destroy
+
+  # accepts_nested_attributes
+  accepts_nested_attributes_for :organizacao, allow_destroy: true
 
   # enumerations
   has_enumeration_for :area

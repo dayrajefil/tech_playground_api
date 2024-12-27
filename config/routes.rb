@@ -5,6 +5,7 @@ Rails.application.routes.draw do
 
   namespace :api do
     namespace :v1 do
+      resources :retornos
       post 'importar_dados', to: 'csv_imports#create'
     end
   end
