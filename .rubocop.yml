@@ -31,6 +31,12 @@ Layout/LineEndStringConcatenationIndentation:
 Layout/SpaceBeforeBrackets:
   Enabled: true
 
+Layout/ArgumentAlignment:
+  Enabled: false
+
+Layout/HashAlignment:
+  Enabled: false
+
 Lint/AmbiguousAssignment:
   Enabled: true
 
