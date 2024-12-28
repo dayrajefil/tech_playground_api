@@ -40,17 +40,17 @@ Agora a API estará rodando em ```http://localhost:3000```.
 
 A aplicação oferece as seguintes rotas:
 
-```GET /api/v1/retornos``` - Lista os primeiros 10 feedbacks, use a paginação para visualizar as outras páginas; ex: ?page=2.
+```GET /api/v1/retornos``` - Lista os primeiros 10 feedbacks por padrão. Utilize o atributo de paginação para acessar as outras páginas (ex: ```?page=2```).
 
-```GET /api/v1/retornos/:id``` - Lista um feedback específico.
+```GET /api/v1/retornos/:id``` - Exibe um feedback específico.
 
-```POST /api/v1/retornos/:id``` - Cria um feedback.
+```POST /api/v1/retornos/:id``` - Cria um novo feedback.
 
-```PUT /api/v1/retornos/:id``` - Atualiza um feedback específico.
+```PUT /api/v1/retornos/:id``` - Atualiza um feedback existente.
 
 ```DELETE /api/v1/retornos/:id``` - Deleta um feedback específico.
 
-```POST /api/v1/importar_dados``` - Realiza a importação de dados via CSV, precisa ser enviado o arquivo ```.csv```.
+```POST /api/v1/importar_dados``` - Importa dados via CSV. Envie um arquivo ```.csv``` conforme o modelo em ```lib/csv/data.csv```.
 
 Exemplo de Dados Esperados por Retorno:
 
