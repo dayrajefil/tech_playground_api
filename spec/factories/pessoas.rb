@@ -20,15 +20,15 @@ FactoryBot.define do
 
     trait :invalid do
       nome { nil }
-      email { "teste@exemplo.com" }
-      email_corporativo { "teste.corp@exemplo.com" }
-      area { Area::ADMINISTRATIVE }
-      cargo { Cargo::ANALYST }
-      funcao { Funcao::MANAGER }
-      localidade { Localidade::SAO_PAULO }
-      tempo_de_empresa { TempoDeEmpresa::BETWEEN_TWO_AND_FIVE }
-      genero { Genero::MALE }
-      geracao { Geracao::BABY_BOOMER }
+      email { nil }
+      email_corporativo { nil }
+      area { nil }
+      cargo { nil }
+      funcao { nil }
+      localidade { nil }
+      tempo_de_empresa { nil }
+      genero { nil }
+      geracao { nil }
 
       after(:create) do |pessoa|
         create(:organizacao, :invalid, pessoa: pessoa)
