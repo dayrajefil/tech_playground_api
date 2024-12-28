@@ -28,6 +28,10 @@ RSpec.configure do |config|
   # Enable FactoryBot methods without needing to prefix with FactoryBot
   config.include FactoryBot::Syntax::Methods
 
+  # Config shoulda-matchers for RSpec
+  config.include Shoulda::Matchers::ActiveModel, type: :model
+  config.include Shoulda::Matchers::ActiveRecord, type: :model
+
   # Filter Rails-related lines from backtraces
   config.filter_rails_from_backtrace!
 end
