@@ -13,7 +13,7 @@ module Api
       def index
         @retornos = Retorno.includes(pessoa: :organizacao).page(params[:page])
         render json: { collection: @retornos, meta: pagination_meta(@retornos) },
-include: { pessoa: { include: :organizacao } }
+                include: { pessoa: { include: :organizacao } }
       end
 
       # GET /retornos/:id
