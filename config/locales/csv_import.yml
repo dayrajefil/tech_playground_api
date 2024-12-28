@@ -2,3 +2,4 @@ pt-BR:
   messages:
     file_not_sent: "Nenhum arquivo enviado"
     import_success: "Importação bem-sucedida!"
+    invalid_file_format: "Formato de arquivo inválido. Por favor, envie um arquivo CSV."

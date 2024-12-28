@@ -13,6 +13,7 @@ module Api
         file = params[:file]
 
         return render_file_not_sent if file.nil?
+        return render_invalid_file_format unless csv_file?(file)
 
         service = ImportCsvService.new(file)
         service.import
@@ -22,8 +23,16 @@ module Api
 
       private
 
+      def csv_file?(file)
+        file.content_type == 'text/csv'
+      end
+
       def render_file_not_sent
         render json: { error: I18n.t('messages.file_not_sent') }, status: :unprocessable_entity
+      end
+
+      def render_invalid_file_format
+        render json: { error: I18n.t('messages.invalid_file_format') }, status: :unprocessable_entity
       end
 
       def render_import_result(service)
