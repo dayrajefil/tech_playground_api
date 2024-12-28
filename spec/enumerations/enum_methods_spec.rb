@@ -1,24 +1,26 @@
+# frozen_string_literal: true
+
 # spec/enums/enum_methods_spec.rb
 require 'rails_helper'
 
 RSpec.describe EnumMethods do
   before do
-    stub_const('GenericEnum', Class.new(EnumMethods))
+    stub_const('GenericEnum', Class.new(described_class))
     GenericEnum.associate_values(
       op_one: 0,
       op_two: 1,
       op_three: 2
     )
 
-    I18n.backend.store_translations(:"pt-BR", {
-      enumerations: {
-        generic_enum: {
-          op_one: 'Primeira',
-          op_two: 'Segunda',
-          op_three: 'Terceira'
-        }
-      }
-    })
+    I18n.backend.store_translations(:'pt-BR', {
+                                      enumerations: {
+                                        generic_enum: {
+                                          op_one: 'Primeira',
+                                          op_two: 'Segunda',
+                                          op_three: 'Terceira'
+                                        }
+                                      }
+                                    })
   end
 
   describe '.value_from_translation' do

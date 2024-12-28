@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 # spec/factories/retornos.rb
 FactoryBot.define do
   factory :retorno do

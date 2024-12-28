@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'rails_helper'
 
 RSpec.describe 'API V1 Retornos', type: :request do
@@ -9,8 +11,8 @@ RSpec.describe 'API V1 Retornos', type: :request do
 
       expect(response).to have_http_status(:ok)
 
-      expect(JSON.parse(response.body)['collection']).to be_an(Array)
-      expect(JSON.parse(response.body)['collection'].count).to eq 10
+      expect(response.parsed_body['collection']).to be_an(Array)
+      expect(response.parsed_body['collection'].count).to eq 10
     end
   end
 
@@ -19,14 +21,14 @@ RSpec.describe 'API V1 Retornos', type: :request do
       get api_v1_retorno_path(retornos[0].id)
 
       expect(response).to have_http_status(:ok)
-      expect(JSON.parse(response.body)['id']).to eq(retornos[0].id)
+      expect(response.parsed_body['id']).to eq(retornos[0].id)
     end
 
     it 'returns an error when the feedback is not found' do
       get api_v1_retorno_path(id: 0)
 
       expect(response).to have_http_status(:not_found)
-      expect(JSON.parse(response.body)['error']).to eq('Feedback não encontrado.')
+      expect(response.parsed_body['error']).to eq('Feedback não encontrado.')
     end
   end
 
@@ -36,12 +38,12 @@ RSpec.describe 'API V1 Retornos', type: :request do
     let!(:valid_attributes) { build_retorno.attributes }
 
     it 'create a new feedback' do
-      expect {
+      expect do
         post api_v1_retornos_path, params: { retorno: valid_attributes.merge(pessoa_attributes: pessoa_attributes) }
-      }.to change(Retorno, :count).by(1)
+      end.to change(Retorno, :count).by(1)
 
       expect(response).to have_http_status(:created)
-      expect(JSON.parse(response.body)['data_da_resposta'].to_date).to eq(build_retorno[:data_da_resposta])
+      expect(response.parsed_body['data_da_resposta'].to_date).to eq(build_retorno[:data_da_resposta])
     end
 
     it 'returns an error when trying to create a fedback with invalid data' do
@@ -50,7 +52,7 @@ RSpec.describe 'API V1 Retornos', type: :request do
       post api_v1_retornos_path, params: { retorno: invalid_attributes }
 
       expect(response).to have_http_status(:unprocessable_entity)
-      expect(JSON.parse(response.body)['data_da_resposta']).to include('não pode ficar em branco')
+      expect(response.parsed_body['data_da_resposta']).to include('não pode ficar em branco')
     end
   end
 
@@ -61,7 +63,7 @@ RSpec.describe 'API V1 Retornos', type: :request do
       put api_v1_retorno_path(retornos[0].id), params: { retorno: valid_attributes }
 
       expect(response).to have_http_status(:ok)
-      expect(JSON.parse(response.body)['interesse_no_cargo']).to eq(8)
+      expect(response.parsed_body['interesse_no_cargo']).to eq(8)
     end
 
     it 'returns error when trying to update with invalid data' do
@@ -70,18 +72,18 @@ RSpec.describe 'API V1 Retornos', type: :request do
       put api_v1_retorno_path(retornos[0].id), params: { retorno: invalid_attributes }
 
       expect(response).to have_http_status(:unprocessable_entity)
-      expect(JSON.parse(response.body)['interesse_no_cargo']).to include('não pode ficar em branco')
+      expect(response.parsed_body['interesse_no_cargo']).to include('não pode ficar em branco')
     end
   end
 
   describe 'DELETE /api/v1/retornos/:id' do
     it 'delete an existing feedback' do
-      expect {
+      expect do
         delete api_v1_retorno_path(retornos[0].id)
-      }.to change(Retorno, :count).by(-1)
+      end.to change(Retorno, :count).by(-1)
 
       expect(response).to have_http_status(:ok)
-      expect(JSON.parse(response.body)['message']).to eq('Feedback deletado com sucesso.')
+      expect(response.parsed_body['message']).to eq('Feedback deletado com sucesso.')
     end
   end
 end

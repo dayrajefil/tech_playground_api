@@ -40,6 +40,27 @@ Layout/HashAlignment:
 Lint/AmbiguousAssignment:
   Enabled: true
 
+RSpecRails/InferredSpecType:
+  Enabled: false
+
+RSpec/MultipleExpectations:
+  Enabled: false
+
+RSpec/MultipleMemoizedHelpers:
+  Enabled: false
+
+RSpec/VerifiedDoubles:
+  Enabled: false
+
+RSpec/NamedSubject:
+  Enabled: false
+
+RSpec/ExampleLength:
+  Max: 10
+
+RSpec/AnyInstance:
+  Enabled: false
+
 Metrics/AbcSize:
   Exclude:
     - 'db/migrate/**/*.rb'

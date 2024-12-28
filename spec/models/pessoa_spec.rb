@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 # spec/models/pessoa_spec.rb
 require 'rails_helper'
 
@@ -20,21 +22,21 @@ RSpec.describe Pessoa, type: :model do
 
   context 'when the email already exists' do
     it 'must not be valid with duplicate email' do
-      pessoa1 = create(:pessoa, :valid, email: "joao@example.com")
+      pessoa1 = create(:pessoa, :valid, email: 'joao@example.com')
       pessoa2 = build(:pessoa, :valid, email: pessoa1.email)
 
       expect(pessoa2).not_to be_valid
-      expect(pessoa2.errors[:email]).to include("já está em uso")
+      expect(pessoa2.errors[:email]).to include('já está em uso')
     end
   end
 
   context 'when the corporate email already exists' do
-    it 'should not be valid with duplicate corporate email' do
-      pessoa1 = create(:pessoa, :valid, email_corporativo: "joao@empresa.com")
+    it 'is not valid with duplicate corporate email' do
+      pessoa1 = create(:pessoa, :valid, email_corporativo: 'joao@empresa.com')
       pessoa2 = build(:pessoa, :valid, email_corporativo: pessoa1.email_corporativo)
 
       expect(pessoa2).not_to be_valid
-      expect(pessoa2.errors[:email_corporativo]).to include("já está em uso")
+      expect(pessoa2.errors[:email_corporativo]).to include('já está em uso')
     end
   end
 end

@@ -1,12 +1,14 @@
+# frozen_string_literal: true
+
 require 'enumerate_it'
 require 'rails_helper'
 
 RSpec.describe Genero do
   describe '.associate_values' do
     it 'associates the correct keys' do
-      expect(Genero.enumeration.keys).to eq(%i[
-        other female male
-      ])
+      expect(described_class.enumeration.keys).to eq(%i[
+                                                       other female male
+                                                     ])
     end
 
     it 'associates the correct values' do

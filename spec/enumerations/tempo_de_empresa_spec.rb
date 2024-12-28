@@ -1,12 +1,14 @@
+# frozen_string_literal: true
+
 require 'enumerate_it'
 require 'rails_helper'
 
 RSpec.describe TempoDeEmpresa do
   describe '.associate_values' do
     it 'associates the correct keys' do
-      expect(TempoDeEmpresa.enumeration.keys).to eq(%i[
-        less_than_one between_one_and_two between_two_and_five more_than_five
-      ])
+      expect(described_class.enumeration.keys).to eq(
+        %i[less_than_one between_one_and_two between_two_and_five more_than_five]
+      )
     end
 
     it 'associates the correct values' do

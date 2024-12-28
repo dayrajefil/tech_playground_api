@@ -1,12 +1,14 @@
+# frozen_string_literal: true
+
 require 'enumerate_it'
 require 'rails_helper'
 
 RSpec.describe Geracao do
   describe '.associate_values' do
     it 'associates the correct keys' do
-      expect(Geracao.enumeration.keys).to eq(%i[
-        baby_boomer x_generation y_generation z_generation
-      ])
+      expect(described_class.enumeration.keys).to eq(%i[
+                                                       baby_boomer x_generation y_generation z_generation
+                                                     ])
     end
 
     it 'associates the correct values' do

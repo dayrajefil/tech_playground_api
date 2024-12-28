@@ -1,12 +1,14 @@
+# frozen_string_literal: true
+
 require 'enumerate_it'
 require 'rails_helper'
 
 RSpec.describe Cargo do
   describe '.associate_values' do
     it 'associates the correct keys' do
-      expect(Cargo.enumeration.keys).to eq(%i[
-        intern analyst coordinator manager director
-      ])
+      expect(described_class.enumeration.keys).to eq(%i[
+                                                       intern analyst coordinator manager director
+                                                     ])
     end
 
     it 'associates the correct values' do

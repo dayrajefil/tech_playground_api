@@ -1,12 +1,14 @@
+# frozen_string_literal: true
+
 require 'enumerate_it'
 require 'rails_helper'
 
 RSpec.describe Area do
   describe '.associate_values' do
     it 'associates the correct keys' do
-      expect(Area.enumeration.keys).to eq(%i[
-        administrative commercial financial human_resources technology
-      ])
+      expect(described_class.enumeration.keys).to eq(%i[
+                                                       administrative commercial financial human_resources technology
+                                                     ])
     end
 
     it 'associates the correct values' do

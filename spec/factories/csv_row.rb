@@ -1,5 +1,7 @@
+# frozen_string_literal: true
+
 FactoryBot.define do
-  factory :csv_row, class: CSV::Row do
+  factory :csv_row, class: 'CSV::Row' do
     transient do
       valid_data { true }
     end
@@ -17,9 +19,8 @@ FactoryBot.define do
           'Clareza sobre Possibilidades de Carreira', 'Comentários - Clareza sobre Possibilidades de Carreira',
           'Expectativa de Permanência', 'Comentários - Expectativa de Permanência', 'eNPS', '[Aberta] eNPS'
         ],
-        valid_data ? 
-        [
-          "Nova Linha", "nova.linha#{unique_id}@email.com", "nova.linha#{unique_id}@empresa.com", 'financeiro',
+        valid_data ? [
+          'Nova Linha', "nova.linha#{unique_id}@email.com", "nova.linha#{unique_id}@empresa.com", 'financeiro',
           'analista', 'profissional', 'São Paulo', 'entre 1 e 2 anos', 'feminino', 'geração y', 'empresa',
           'diretoria', 'gerência', 'coordenação', 'área', '15/12/2023',
           '7', 'Comentário Interesse',
@@ -30,8 +31,7 @@ FactoryBot.define do
           '7', 'Comentário Clareza',
           '9', 'Comentário Expectativa',
           '8', 'Comentário eNPS'
-        ] : 
-        [
+        ] : [
           nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil,
           nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil
         ]

@@ -1,8 +1,10 @@
+# frozen_string_literal: true
+
 # spec/factories/pessoas.rb
 FactoryBot.define do
   factory :pessoa do
     trait :valid do
-      nome { "Teste" }
+      nome { 'Teste' }
       sequence(:email) { |n| "teste#{n}@exemplo.com" }
       sequence(:email_corporativo) { |n| "teste.corp#{n}@exemplo.com" }
       area { Area::ADMINISTRATIVE }
